@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.yztc.fazhi.ui.login.bean.UserBean"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activity_user_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context="com.yztc.fazhi.ui.login.UserInfoActivity">
+
+        <ImageView
+            android:id="@+id/userInfo_img_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_launcher"
+            app:iconUrl="@{user.icon}"/>
+
+        <EditText
+            android:id="@+id/userInfo_et_nike"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@={user.nickname}"/>
+
+        <EditText
+            android:id="@+id/userInfo_et_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="@{String.valueOf(user.gender)}"/>
+
+        <EditText
+            android:id="@+id/userInfo_et_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="@{String.valueOf(user.age)}"/>
+
+        <EditText
+            android:id="@+id/userInfo_et_province"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@={user.province}"/>
+
+        <EditText
+            android:id="@+id/userInfo_et_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@={user.city}"/>
+
+        <EditText
+            android:id="@+id/userInfo_et_trade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@={user.trade}"/>
+
+        <EditText
+            android:id="@+id/userInfo_et_company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@={user.company}"/>
+
+        <EditText
+            android:id="@+id/userInfo_et_job"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@={user.job}"/>
+
+        <EditText
+            android:id="@+id/userInfo_et_fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="@={user.fullname}"/>
+
+
+        <com.yztc.fazhi.base.from.FzButton
+            android:id="@+id/userInfo_btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="提交" />
+    </LinearLayout>
+</layout>
