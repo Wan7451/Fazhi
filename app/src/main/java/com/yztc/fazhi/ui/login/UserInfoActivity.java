@@ -33,7 +33,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class UserInfoActivity extends AppCompatActivity implements IUserInfoView, IChoiceIconView, IUpImagesView {
+public class UserInfoActivity extends AppCompatActivity
+        implements IUserInfoView, IChoiceIconView, IUpImagesView {
 
     @BindView(R.id.userInfo_img_icon)
     ImageView userInfoImgIcon;
@@ -122,17 +123,18 @@ public class UserInfoActivity extends AppCompatActivity implements IUserInfoView
     @Override
     public void showCropImage(File file) {
         Uri uri = Uri.fromFile(file);
+        //file:// 路径
         ImageLoader.loadIcon(this, uri.toString(), userInfoImgIcon);
 
         IUpImagesPresenter presenter=new UpImagesPresenterImpl(this,this);
+        //上传到图片的服务器
         presenter.upImage(file);
     }
 
     @OnClick(R.id.userInfo_img_icon)
     public void onIconClick() {
-
+        //点击头像
         presenter = new ChoiceIconPresenterImpl(this, this);
-
         String[] items = {"打开相册", "打开相机"};
         new AlertDialog.Builder(UserInfoActivity.this)
                 .setItems(items,

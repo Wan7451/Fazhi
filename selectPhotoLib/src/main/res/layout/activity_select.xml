@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="#fe181818">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:padding="2dp"
+            android:src="@drawable/ic_gf_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_back"
+            android:text="图片"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_select_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="2dp"
+            android:text="完成（%d/%d）"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginRight="5dp" />
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/titlebar">
+
+        <TextView
+            android:id="@+id/tv_empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="loading..."
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <GridView
+            android:id="@+id/gv_photo_list"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@android:color/black"
+            android:cacheColorHint="@android:color/transparent"
+            android:clipToPadding="false"
+            android:fadingEdge="none"
+            android:horizontalSpacing="2dp"
+            android:numColumns="3"
+            android:paddingTop="1.5dp"
+            android:verticalSpacing="2dp" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_folder_panel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="46dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ListView
+            android:id="@+id/lv_folder_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E6000000"
+            android:backgroundTint="@android:color/white"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="#d2d2d7"
+            android:dividerHeight="0.5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true"
+        android:background="#c8000000"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_photo_folder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="所有图片"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

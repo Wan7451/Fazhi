@@ -43,12 +43,14 @@ public class UpImagesPresenterImpl implements IUpImagesPresenter {
                     @Override
                     public void onSuccess(File file) {
                         loadingDialog.setMessage("开始上传...");
+                        //file 压缩好的图片
                         up(context, file, img.getName());
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         loadingDialog.setMessage("开始上传...");
+                        //上传原图片
                         up(context, img, img.getName());
                     }
                 }).launch();

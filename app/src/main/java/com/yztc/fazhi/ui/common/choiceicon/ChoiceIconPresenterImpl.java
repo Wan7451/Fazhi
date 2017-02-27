@@ -73,7 +73,8 @@ public class ChoiceIconPresenterImpl implements IChoiceIconPresenter {
         switch (requestCode) {
             case REQUEST_CAMERA:
                 //请求相机
-                if (mTmpFile != null) {
+                if (mTmpFile != null && resultCode == Activity.RESULT_OK) {
+                    //裁剪好的图片
                     mCropedFile = FileUtils.createTempFile(activity, generateFileName());
                     Uri outUri = Uri.fromFile(mCropedFile);
                     Uri inUri = Uri.fromFile(mTmpFile);
@@ -81,7 +82,7 @@ public class ChoiceIconPresenterImpl implements IChoiceIconPresenter {
                 }
                 break;
             case REQUEST_GALLERY:
-                if(data!=null){
+                if (data != null && resultCode == Activity.RESULT_OK) {
                     Uri inUri = data.getData();
                     mCropedFile = FileUtils.createTempFile(activity, generateFileName());
                     Uri outUri = Uri.fromFile(mCropedFile);
@@ -89,7 +90,9 @@ public class ChoiceIconPresenterImpl implements IChoiceIconPresenter {
                 }
                 break;
             case REQUEST_CROP:
-                view.showCropImage(mCropedFile);
+                if (resultCode == Activity.RESULT_OK) {
+                    view.showCropImage(mCropedFile);
+                }
                 break;
         }
     }
@@ -130,8 +133,10 @@ public class ChoiceIconPresenterImpl implements IChoiceIconPresenter {
     }
 
     private void goGallery() {
+        //选择1个图
         Intent intent = new Intent(Intent.ACTION_PICK, null);
-        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+                "image/*");
         activity.startActivityForResult(intent, REQUEST_GALLERY);
     }
 

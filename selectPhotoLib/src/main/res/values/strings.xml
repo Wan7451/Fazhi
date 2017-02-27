@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TestSelectPhoto</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="selected">已选(%1$s/%2$s)</string>
+</resources>

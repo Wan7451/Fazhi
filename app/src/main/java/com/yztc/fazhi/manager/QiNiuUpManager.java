@@ -71,7 +71,6 @@ public class QiNiuUpManager {
             return;
         }
 
-
         //上传进度
         final UpProgressHandler handler = new UpProgressHandler() {
             @Override

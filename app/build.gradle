@@ -29,7 +29,6 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     compile 'com.android.support:appcompat-v7:25.1.1'
     testCompile 'junit:junit:4.12'
     //======
@@ -58,4 +57,6 @@ dependencies {
     compile 'com.qiniu:qiniu-android-sdk:7.3.+'
     //=======压缩图片
     compile 'top.zibin:Luban:1.0.9'
+    compile project(':selectPhotoLib')
+    compile 'com.android.support:recyclerview-v7:25.2.0'
 }
