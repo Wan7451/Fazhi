@@ -1,17 +1,16 @@
 package com.yztc.fazhi.ui.login;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 
 import com.yztc.fazhi.R;
 import com.yztc.fazhi.dialog.LoadingDialog;
-import com.yztc.fazhi.ui.login.mvp.ILoginPresenter;
 import com.yztc.fazhi.ui.login.mvp.ILoginView;
 import com.yztc.fazhi.ui.login.mvp.LoginPresenterImpl;
 import com.yztc.fazhi.util.ToastUtils;
+import com.yztc.fazhi.util.UIManger;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,12 +42,12 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
 
     @Override
     public void showHint(String hint) {
-        ToastUtils.showToast(this,hint);
+        ToastUtils.showToast(this, hint);
     }
 
     @Override
     public void showError(String error) {
-        ToastUtils.showErrorToast(this,error);
+        ToastUtils.showErrorToast(this, error);
     }
 
     @Override
@@ -67,4 +66,8 @@ public class LoginActivity extends AppCompatActivity implements ILoginView {
         return this;
     }
 
+    @OnClick(R.id.login_btn_register)
+    public void register() {
+        UIManger.startRegister(this);
+    }
 }

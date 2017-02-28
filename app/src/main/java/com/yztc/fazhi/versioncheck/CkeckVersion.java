@@ -1,4 +1,4 @@
-package com.yztc.fazhi;
+package com.yztc.fazhi.versioncheck;
 
 /**
  * Created by wanggang on 2017/2/28.

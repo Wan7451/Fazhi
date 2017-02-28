@@ -4,10 +4,10 @@ import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
 
-import com.yztc.fazhi.EventNewVersion;
 import com.yztc.fazhi.R;
 import com.yztc.fazhi.net.NetRequest;
 import com.yztc.fazhi.util.FileUtils;
+import com.yztc.fazhi.versioncheck.EventNewVersion;
 
 import org.greenrobot.eventbus.EventBus;
 

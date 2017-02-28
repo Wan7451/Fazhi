@@ -3,9 +3,13 @@ package com.yztc.fazhi.util;
 import android.content.Context;
 import android.content.Intent;
 
+import com.yztc.fazhi.MainActivity;
 import com.yztc.fazhi.ui.login.LoginActivity;
+import com.yztc.fazhi.ui.login.RegisterActivity;
 import com.yztc.fazhi.ui.login.UserInfoActivity;
 import com.yztc.fazhi.ui.request.GetImagesActivity;
+import com.yztc.fazhi.ui.request.SendImagesActivity;
+import com.yztc.fazhi.ui.splash.SplashActivity;
 
 import java.util.ArrayList;
 
@@ -18,6 +22,12 @@ public class UIManger {
     public static void startLogin(Context context){
         Intent i=new Intent();
         i.setClass(context,LoginActivity.class);
+        context.startActivity(i);
+    }
+
+    public static void startRegister(Context context){
+        Intent i=new Intent();
+        i.setClass(context,RegisterActivity.class);
         context.startActivity(i);
     }
 
@@ -34,4 +44,15 @@ public class UIManger {
         context.startActivity(i);
     }
 
+    public static void startMain(Context context) {
+        Intent i=new Intent();
+        i.setClass(context,MainActivity.class);
+        context.startActivity(i);
+    }
+
+    public static void startSendImages(Context context) {
+        Intent i=new Intent();
+        i.setClass(context,SendImagesActivity.class);
+        context.startActivity(i);
+    }
 }

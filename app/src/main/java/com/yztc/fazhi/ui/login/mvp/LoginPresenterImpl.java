@@ -161,7 +161,7 @@ public class LoginPresenterImpl implements ILoginPresenter {
                         LocalData.putSessionKey(uer.getSession_key());
                         LocalData.putUserID(uer.getUser_id());
 
-                        UIManger.startUserInfo(view.getContext());
+                        UIManger.startMain(view.getContext());
                     }
                 });
 

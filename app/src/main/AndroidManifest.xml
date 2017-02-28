@@ -14,27 +14,31 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".ui.login.RegisterActivity" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="login" />
+        <activity
+            android:name=".ui.login.UserInfoActivity"
+            android:label="info" />
+        <activity
+            android:name=".ui.request.SendImagesActivity"
+            android:label="sendRequest"></activity>
+
+        <service android:name=".service.DownoladService" />
+        <service android:name=".service.GetSplashImageService" />
+
+        <activity android:name=".ui.request.GetImagesActivity" />
+        <activity android:name=".ui.splash.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.login.RegisterActivity" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="login"></activity>
-        <activity
-            android:name=".ui.login.UserInfoActivity"
-            android:label="info"></activity>
-        <activity
-            android:name=".ui.request.SendImagesActivity"
-            android:label="sendRequest">
-
-        </activity>
-        <service android:name=".service.DownoladService"/>
-
-        <activity android:name=".ui.request.GetImagesActivity"></activity>
     </application>
 
 </manifest>

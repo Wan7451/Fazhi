@@ -10,6 +10,8 @@ import com.yztc.fazhi.util.SPUtils;
  */
 
 public class LocalData {
+    private static String splashImagePath;
+
     public static String getSessionKey() {
         return (String) SPUtils.get(App.getApp(),"SessionKey","");
     }
@@ -24,5 +26,13 @@ public class LocalData {
 
     public static int getUserID() {
       return (int) SPUtils.get(App.getApp(),"user_id",0);
+    }
+
+    public static String getSplashImagePath() {
+        return (String) SPUtils.get(App.getApp(),"SplashImagePath","");
+    }
+
+    public static void putSplashImagePath(String pics) {
+        SPUtils.put(App.getApp(),"SplashImagePath",pics);
     }
 }
