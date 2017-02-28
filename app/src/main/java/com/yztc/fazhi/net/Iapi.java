@@ -1,5 +1,6 @@
 package com.yztc.fazhi.net;
 
+import com.yztc.fazhi.CkeckVersion;
 import com.yztc.fazhi.ui.login.bean.UserBean;
 
 import okhttp3.RequestBody;
@@ -31,6 +32,9 @@ public interface Iapi {
 
     @POST("updateUser")
     Observable<BaseResponse<UserBean>> updateUser(@Body RequestBody params);
+
+    @POST("versionCheck")
+    Observable<BaseResponse<CkeckVersion>> versionCheck(@Body RequestBody params);
 
 
 }

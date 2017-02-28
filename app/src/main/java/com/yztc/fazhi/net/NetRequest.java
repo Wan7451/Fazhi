@@ -63,6 +63,11 @@ public class NetRequest {
                 .build();
     }
 
+
+    public OkHttpClient getHttpClient(){
+        return client;
+    }
+
     private Retrofit getRetrofit() {
         return new Retrofit.Builder()
                 .client(client)

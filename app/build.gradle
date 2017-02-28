@@ -11,6 +11,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ eventBusIndex : 'com.example.myapp.MyEventBusIndex' ]
+            }
+        }
     }
     buildTypes {
         release {
@@ -59,4 +65,8 @@ dependencies {
     compile 'top.zibin:Luban:1.0.9'
     compile project(':selectPhotoLib')
     compile 'com.android.support:recyclerview-v7:25.2.0'
+
+    //=============
+    compile 'org.greenrobot:eventbus:3.0.0'
+    annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
 }
