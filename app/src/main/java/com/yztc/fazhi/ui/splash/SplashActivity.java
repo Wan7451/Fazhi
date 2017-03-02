@@ -1,6 +1,5 @@
 package com.yztc.fazhi.ui.splash;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -9,11 +8,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.yztc.fazhi.MainActivity;
 import com.yztc.fazhi.R;
 import com.yztc.fazhi.data.LocalData;
 import com.yztc.fazhi.service.GetSplashImageService;
-import com.yztc.fazhi.ui.login.LoginActivity;
 import com.yztc.fazhi.util.UIManger;
 
 import butterknife.BindView;
